@@ -102,6 +102,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   const producto = await getProducto(id);
   if (producto)
-    return <Client producto={producto as any} />
+    return <Client producto={producto} />
   else return notFound();
 }

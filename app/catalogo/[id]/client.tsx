@@ -6,7 +6,6 @@ import { Check, Heart, Phone, Share2, Truck, Shield, Droplets, Gauge, Clock } fr
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { useParams } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux"
 import { some } from "lodash"
 
@@ -24,7 +23,6 @@ interface Props {
 }
 
 export default function ProductDetailPage({ producto }: Props) {
-  const params = useParams()
   const [selectedVariant, setSelectedVariant] = useState<Variante | null>(null)
   const [currentImageUrl, setCurrentImageUrl] = useState<string | undefined>(undefined)
   const { favProducts } = useSelector((state: RootState) => state.user)

@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, Grid3X3, Heart, List, Search, SlidersHorizontal, Eye, Phone, LoaderCircle, ChevronLeft } from "lucide-react"
+import { Search, LoaderCircle, ChevronLeft } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -98,7 +98,7 @@ export default function CatalogoPage() {
                                         <ChevronLeft />
                                     </Button>
                                     <h3 className=" font-bold text-primary text-lg">Estás buscando en la colección de <span className="text-secondary capitalize">
-                                        "{params.get('coleccion')}"</span></h3>
+                                        {`"${params.get('coleccion')}"`}</span></h3>
                                 </div>
                             )
                         }
