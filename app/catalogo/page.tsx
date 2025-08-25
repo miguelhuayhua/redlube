@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
 import Producto from "../components/producto"
-import { Categoria, Publicacion } from "@/types/main"
+import { Categoria, CategoriaPublicacion, Publicacion } from "@/types/main"
 import { useRouter, useSearchParams } from "next/navigation"
 
 
@@ -47,7 +47,7 @@ export default function CatalogoPage() {
                 setProductosFiltrados(data);
             }
             else
-                setProductosFiltrados(data.filter((producto: any) => producto.categorias.some((value: any) => value.categoria?.nombre.toLowerCase() == cat.toLowerCase())))
+                setProductosFiltrados(data.filter((producto:Publicacion) => producto.categorias.some((value: CategoriaPublicacion) => value.categoria?.nombre.toLowerCase() == cat.toLowerCase())))
         })
     }, []);
     useEffect(() => {

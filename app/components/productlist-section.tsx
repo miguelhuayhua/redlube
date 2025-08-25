@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Coleccion, Publicacion } from "@/types/main"
+import { Coleccion } from "@/types/main"
 import Producto from "./producto"
 import { Button } from "@/components/ui/button"
 import { Loader, Plus } from "lucide-react"

@@ -16,15 +16,15 @@ const geistMono = Geist_Mono({
 });
 export const metadata: Metadata = {
   title: "REDLUBE",
-  description: "Baterías eficientes para autos, motos y más.",
+  description: "Venta de aceites, líquidos y repuestos para vehículos.",
   openGraph: {
     title: "REDLUBE",
-    description: "Baterías eficientes para autos, motos y más.",
-    url: "https://redlube-bo.vercel.app",
+    description: "Venta de aceites, líquidos y repuestos para vehículos.",
+    url: "https://redlube.vercel.app",
     siteName: "REDLUBE",
     images: [
       {
-        url: "https://redlube-bo.vercel.app/op-normal.png",
+        url: "https://redlube.vercel.app/op-normal.png",
         width: 1200,
         height: 630,
         alt: "REDLUBE",
@@ -35,10 +35,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "REDLUBE",
-    description: "Baterías eficientes para autos, motos y más.",
-    images: ["https://redlube-bo.vercel.app/og-image.png"],
+    description: "Venta de aceites, líquidos y repuestos para vehículos.",
+    images: ["https://redlube.vercel.app/og-image.png"],
   },
-
 };
 
 export default function RootLayout({

@@ -17,19 +17,13 @@ import Producto from "../components/producto"
 const FavoritosPage = () => {
   const dispatch = useDispatch()
   const { favProducts } = useSelector((state: RootState) => state.user)
-  const [productos, setProductos] = useState<Publicacion[]>([])
   const [filteredProductos, setFilteredProductos] = useState<Publicacion[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [searchQuery, setSearchQuery] = useState("")
-  const [sortBy, setSortBy] = useState("newest")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-
   // Fetch productos favoritos
   useEffect(() => {
     const fetchFavoriteProducts = async () => {
       if (favProducts.length === 0) {
         setIsLoading(false)
-        setProductos([])
         setFilteredProductos([])
         return
       }
@@ -50,7 +44,6 @@ const FavoritosPage = () => {
         const allProducts: Publicacion[] = await response.json()
         // Filtrar solo los productos favoritos
         const favoriteProducts = allProducts.filter((product: Publicacion) => favProducts.includes(product.id))
-        setProductos(favoriteProducts)
         setFilteredProductos(favoriteProducts)
       } catch (error) {
         console.error("Error fetching favorite products:", error)
@@ -61,52 +54,7 @@ const FavoritosPage = () => {
     fetchFavoriteProducts()
   }, [favProducts])
 
-  // Filtrar y ordenar productos
-  useEffect(() => {
-    let filtered = [...productos]
-    // Filtrar por búsqueda
-    if (searchQuery) {
-      filtered = filtered.filter(
-        (product) =>
-          product.titulo.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.subtitulo?.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
-    }
-    // Filtrar por categoría (simulado)
-    if (selectedCategory !== "all") {
-      // Aquí podrías filtrar por categoría real
-      // filtered = filtered.filter(product => product.categoria === selectedCategory)
-    }
-    // Ordenar
-    switch (sortBy) {
-      case "price-low":
-        filtered.sort((a, b) => {
-          const priceA = a.variantes[0]?.precio || 0
-          const priceB = b.variantes[0]?.precio || 0
-          return priceA - priceB
-        })
-        break
-      case "price-high":
-        filtered.sort((a, b) => {
-          const priceA = a.variantes[0]?.precio || 0
-          const priceB = b.variantes[0]?.precio || 0
-          return priceB - priceA
-        })
-        break
-      case "name":
-        filtered.sort((a, b) => a.titulo.localeCompare(b.titulo))
-        break
-      case "newest":
-      default:
-        filtered.sort((a, b) => new Date(b.creadoEn).getTime() - new Date(a.creadoEn).getTime())
-        break
-    }
-    setFilteredProductos(filtered)
-  }, [productos, searchQuery, sortBy, selectedCategory])
-
-  const handleRemoveFromFavorites = (productId: string) => {
-    dispatch(toggleFavProduct({ id: productId }))
-  }
+ 
 
   const handleClearAllFavorites = () => {
     favProducts.forEach((id) => {
@@ -239,8 +187,7 @@ const FavoritosPage = () => {
                 <Button
                   variant="outline"
                   onClick={() => {
-                    setSearchQuery("")
-                    setSelectedCategory("all")
+                   
                   }}
                   className=" hover:bg-pink-400 hover:text-black"
                 >

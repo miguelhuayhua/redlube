@@ -164,7 +164,7 @@ export default function TestimonialSection() {
                   </div>
 
                   <blockquote className="mb-4 text-sm leading-relaxed text-muted-foreground italic">
-                    "{testimonio.texto}"
+                    {`"${testimonio.texto}"`}
                   </blockquote>
 
                   <Badge
