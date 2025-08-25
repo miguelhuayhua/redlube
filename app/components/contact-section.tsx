@@ -1,12 +1,10 @@
 "use client"
 import {
-    Mail,
-    MapPin,
     Phone,
 
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -55,8 +53,8 @@ export default function ContactSection() {
                                 </CardHeader>
                                 <form onSubmit={(e) => {
                                     e.preventDefault()
-                                    let formData = new FormData(e.target as HTMLFormElement);
-                                    let a = document.createElement('a');
+                                    const formData = new FormData(e.target as HTMLFormElement);
+                                    const a = document.createElement('a');
                                     a.href = `https://api.whatsapp.com/send?phone=59169848691&text=${encodeURIComponent(`Nombre: ${formData.get('nombre')}\nAsunto: ${formData.get('asunto')}\nMensaje: ${formData.get('proyecto')}`)}`;
                                     a.target = '_blank';
                                     a.click();

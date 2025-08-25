@@ -146,17 +146,8 @@ export default function Footer() {
 
         <div className="text-center animate-fade-in-up animation-delay-800">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
-            <div className="flex items-center gap-3 font-bold text-lg">
-              <div className="relative">
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <div className="absolute inset-0 bg-blue-400 rounded-full blur-md opacity-30" />
-              </div>
+            <div className="flex items-center gap-3 font-bold text-xs">
+             
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 REDLUBE
               </span>

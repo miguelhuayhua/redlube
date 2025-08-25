@@ -27,7 +27,7 @@ export default function VariantSelector({ opciones, variantes, onVariantChange }
         } else {
             // Case: With options, find default variant or initialize with first options
             const defaultVariant = variantes.find(v => v.valores.length == 0 && v.estado)
-            let initialSelectedOptions: Record<string, string> = {}
+            const initialSelectedOptions: Record<string, string> = {}
 
             if (defaultVariant) {
                 // If a default variant exists, set selected options based on its values

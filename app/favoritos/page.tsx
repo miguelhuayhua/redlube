@@ -7,9 +7,8 @@ import { motion, AnimatePresence } from "framer-motion" // Manteniendo tus impor
 import type { RootState } from "@/store" // Manteniendo tu tipo RootState
 import { toggleFavProduct } from "@/store/reducers/user" // Manteniendo tu acción de Redux
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Heart, Search, ArrowLeft, Trash2, Star, TrendingUp, ShoppingCart, Zap, Grid3X3, List } from "lucide-react"
-import { Badge } from "@/components/ui/badge" // Añadido para el diseño
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Heart, Search, ArrowLeft, Trash2 } from "lucide-react"
 
 // Asegúrate de que tu tipo Publicacion esté definido en "@/types/main"
 import type { Publicacion } from "@/types/main"

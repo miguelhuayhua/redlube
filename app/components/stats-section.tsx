@@ -76,7 +76,7 @@ export default function StatSection() {
 
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground italic">
-            "Tu vehículo merece el mejor cuidado" - RedLube Bolivia
+            {`"Tu vehículo merece el mejor cuidado" - RedLube Bolivia`}
           </p>
         </div>
       </div>
