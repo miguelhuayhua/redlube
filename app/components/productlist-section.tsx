@@ -58,7 +58,7 @@ export default function ProductListSection() {
                             ))
                         )
                         :
-                        <div className="py-10 mx-auto ">
+                        <div className="py-10 mx-auto flex justify-center">
                             <Loader className="animate-spin size-5 text-primary" />
                         </div>
                 }
