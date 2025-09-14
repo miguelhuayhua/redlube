@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import type { Categoria } from "@/types/main"
 
 export default function Footer() {
-  const enlaces = ["nosotros", "contacto", "servicios"]
+  const enlaces = [ "contacto", "servicios"]
   const [categorias, setCategorias] = useState<Categoria[]>([])
 
   useEffect(() => {

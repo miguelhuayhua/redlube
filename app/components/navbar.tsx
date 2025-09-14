@@ -24,7 +24,7 @@ export default function Navbar() {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-6">
-              {["Productos",  "Contacto"].map((item, i) => (
+              {["Productos", "Contacto"].map((item, i) => (
                 <Link
                   key={item}
                   href={`/#${item.toLowerCase()}`}
@@ -42,16 +42,16 @@ export default function Navbar() {
                   <span className="ml-1 ">Favoritos</span>
                 </Button>
               </Link>
-                <Link
+              <Link
                 href="https://wa.me/59169848691?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20productos%20de%20aceites%20y%20l%C3%ADquidos%20de%20auto."
                 target="_blank"
                 rel="noopener noreferrer"
-                >
+              >
                 <Button variant="secondary" >
                   <Phone className="size-4" />
                   Contactarnos
                 </Button>
-                </Link>
+              </Link>
             </div>
           </nav>
         </div>
